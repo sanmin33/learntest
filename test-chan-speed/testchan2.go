@@ -75,6 +75,7 @@ func sendMsg(msgChan []chan interface{}, msg string, stopflag chan int, msgNum *
 		for i := 0; i < len(msgChan); i++ {
 			select {
 			case msgChan[i] <- msg:
+				*msgNum++
 			default:
 				continue
 			}
@@ -83,7 +84,7 @@ func sendMsg(msgChan []chan interface{}, msg string, stopflag chan int, msgNum *
 		case <-stopflag:
 			return
 		default:
-			*msgNum++
+			continue
 		}
 	}
 }
