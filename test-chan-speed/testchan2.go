@@ -9,10 +9,10 @@ import (
 
 var fmsgType = flag.String("msg", "hello", "消息内容")
 var ftimeSecond = flag.Int("time", 1, "每次发送协程的测试时间长度秒")
-var fgoSendNum = flag.Int("gosendnum", 1, "同时发送消息的go协程数量,执行的时候是从1个发送协程开始一直运行到最大数量")
-var fgoGetNum = flag.Int("gogetnum", 1, "同时接收消息的go协程数量")
-var fchanNum = flag.Int("channum", 1, "传递消息的管道数量，默认为1，如果给不是1的数，则管道数量等于发送消息go协程数量")
-var fifcircle = flag.Int("ifcircle", 0, "是否循环输入所有生产者、信道、消费者数量组合")
+var fgoSendNum = flag.Int("s", 1, "同时发送消息的go协程数量,执行的时候是从1个发送协程开始一直运行到最大数量")
+var fgoGetNum = flag.Int("g", 1, "同时接收消息的go协程数量")
+var fchanNum = flag.Int("c", 1, "传递消息的管道数量，默认为1，如果给不是1的数，则管道数量等于发送消息go协程数量")
+var fifcircle = flag.Int("if", 0, "是否循环输入所有生产者、信道、消费者数量组合")
 
 var msg string
 var timeSecond int
